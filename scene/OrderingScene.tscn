@@ -1,0 +1,268 @@
+[gd_scene format=3 uid="uid://crv8tv6nidyhd"]
+
+[ext_resource type="Script" uid="uid://dl50wp7a34kv4" path="res://script/OrderingScene.gd" id="1_2oq46"]
+[ext_resource type="Shader" uid="uid://btgxqpj4xlibb" path="res://script/TitleScene.gdshader" id="2_oj5px"]
+[ext_resource type="Texture2D" uid="uid://b2thytkqcptyh" path="res://image/再生停止ボタン.png" id="3_st7d4"]
+[ext_resource type="StyleBox" uid="uid://b20q2klshigup" path="res://style/new_style_box_flat.tres" id="3_yiede"]
+[ext_resource type="StyleBox" uid="uid://da4b861qmvtq" path="res://style/PlayerList_style_box_flat.tres" id="4_e0exp"]
+[ext_resource type="StyleBox" uid="uid://d1pglcpdvjr8e" path="res://style/General_button_flat.tres" id="4_kv6lg"]
+[ext_resource type="Texture2D" uid="uid://dnojdusako8tj" path="res://image/横顔アイコン.png" id="5_kv6lg"]
+[ext_resource type="StyleBox" uid="uid://ca0mvbqlyud5a" path="res://style/General_button_pressed.tres" id="5_oj5px"]
+[ext_resource type="StyleBox" uid="uid://bmrug4ex2xlmw" path="res://style/General_button_hover.tres" id="6_yiede"]
+[ext_resource type="Texture2D" uid="uid://cvbh55alae3sl" path="res://image/ダーツの矢のアイコン素材.png" id="7_kv6lg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yiede"]
+shader = ExtResource("2_oj5px")
+shader_parameter/bg_color = Color(1, 1, 1, 1)
+shader_parameter/shape_color = Color(0, 0.8, 1, 1)
+shader_parameter/size = 10.0000004275
+shader_parameter/move_speed = 0.10000024225000016
+shader_parameter/global_rotation_speed = 0.10000024225000016
+shader_parameter/local_rotation_speed = -0.9999998100000004
+shader_parameter/shape_size = 0.10000000149012
+
+[sub_resource type="LabelSettings" id="LabelSettings_e0exp"]
+font_size = 30
+font_color = Color(0.43137255, 0.9764706, 0, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wdlmq"]
+font_size = 40
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ebs4p"]
+font_size = 30
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.4745098)
+
+[sub_resource type="FontFile" id="FontFile_wknvd"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/19/0/ascent = 0.0
+cache/0/19/0/descent = 0.0
+cache/0/19/0/underline_position = 0.0
+cache/0/19/0/underline_thickness = 0.0
+cache/0/19/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/21/0/ascent = 0.0
+cache/0/21/0/descent = 0.0
+cache/0/21/0/underline_position = 0.0
+cache/0/21/0/underline_thickness = 0.0
+cache/0/21/0/scale = 1.0
+cache/0/22/0/ascent = 0.0
+cache/0/22/0/descent = 0.0
+cache/0/22/0/underline_position = 0.0
+cache/0/22/0/underline_thickness = 0.0
+cache/0/22/0/scale = 1.0
+cache/0/23/0/ascent = 0.0
+cache/0/23/0/descent = 0.0
+cache/0/23/0/underline_position = 0.0
+cache/0/23/0/underline_thickness = 0.0
+cache/0/23/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/26/0/ascent = 0.0
+cache/0/26/0/descent = 0.0
+cache/0/26/0/underline_position = 0.0
+cache/0/26/0/underline_thickness = 0.0
+cache/0/26/0/scale = 1.0
+cache/0/27/0/ascent = 0.0
+cache/0/27/0/descent = 0.0
+cache/0/27/0/underline_position = 0.0
+cache/0/27/0/underline_thickness = 0.0
+cache/0/27/0/scale = 1.0
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/29/0/ascent = 0.0
+cache/0/29/0/descent = 0.0
+cache/0/29/0/underline_position = 0.0
+cache/0/29/0/underline_thickness = 0.0
+cache/0/29/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wdlmq"]
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+
+[node name="OrderingScene" type="Control" unique_id=791961354]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2oq46")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1977234586]
+unique_name_in_owner = true
+z_index = -100
+material = SubResource("ShaderMaterial_yiede")
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 1280.0
+color = Color(1, 1, 1, 0.8)
+
+[node name="VBox_Main" type="VBoxContainer" parent="." unique_id=704109657]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 58.0
+offset_right = 594.0
+offset_bottom = 1107.0
+
+[node name="Label_Theme" type="Label" parent="VBox_Main" unique_id=1825048782]
+unique_name_in_owner = true
+layout_mode = 2
+text = "現在のテーマ"
+label_settings = SubResource("LabelSettings_e0exp")
+
+[node name="Value_Panel" type="Panel" parent="VBox_Main/Label_Theme" unique_id=791524837]
+z_index = -1
+custom_minimum_size = Vector2(240, 200)
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 200.0
+theme_override_styles/panel = ExtResource("3_yiede")
+
+[node name="Label_Theme_direction" type="Label" parent="VBox_Main" unique_id=1612395169]
+layout_mode = 2
+text = "上から順に
+100に近づけよう"
+label_settings = SubResource("LabelSettings_wdlmq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimerLabel" type="Label" parent="VBox_Main" unique_id=2009523062]
+unique_name_in_owner = true
+layout_mode = 2
+text = "残り時間"
+label_settings = SubResource("LabelSettings_ebs4p")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox_Main" unique_id=1661233888]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("4_e0exp")
+
+[node name="VBox_PlayerList" type="VBoxContainer" parent="VBox_Main/ScrollContainer" unique_id=1037865477]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="HBox_Footer" type="VBoxContainer" parent="VBox_Main" unique_id=1764566480]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBox_Main/HBox_Footer" unique_id=97554676]
+layout_mode = 2
+alignment = 1
+
+[node name="Button_Info" type="Button" parent="VBox_Main/HBox_Footer/HBoxContainer" unique_id=1844187367]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("4_kv6lg")
+theme_override_styles/pressed = ExtResource("5_oj5px")
+theme_override_styles/hover = ExtResource("6_yiede")
+text = "覗き見
+しちゃう？"
+icon = ExtResource("5_kv6lg")
+
+[node name="Button_Pause" type="Button" parent="VBox_Main/HBox_Footer/HBoxContainer" unique_id=1852612164]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("4_kv6lg")
+theme_override_styles/pressed = ExtResource("5_oj5px")
+theme_override_styles/hover = ExtResource("6_yiede")
+icon = ExtResource("3_st7d4")
+
+[node name="Button_Submit" type="Button" parent="VBox_Main/HBox_Footer" unique_id=125285159]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_wknvd")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("4_kv6lg")
+theme_override_styles/pressed = ExtResource("5_oj5px")
+theme_override_styles/hover = ExtResource("6_yiede")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_wdlmq")
+text = "これで確定！
+(2回タップ)"
+icon = ExtResource("7_kv6lg")
+
+[node name="Timer_Thinking" type="Timer" parent="." unique_id=288935696]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="pressed" from="VBox_Main/HBox_Footer/HBoxContainer/Button_Info" to="." method="_on_button_info_pressed"]
+[connection signal="pressed" from="VBox_Main/HBox_Footer/HBoxContainer/Button_Pause" to="." method="_on_button_pause_pressed"]
+[connection signal="pressed" from="VBox_Main/HBox_Footer/Button_Submit" to="." method="_on_button_submit_pressed"]

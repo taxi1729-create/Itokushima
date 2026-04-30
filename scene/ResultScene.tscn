@@ -1,0 +1,260 @@
+[gd_scene format=3 uid="uid://by0xedcpxdmgh"]
+
+[ext_resource type="Script" uid="uid://dawkxskvx0srh" path="res://script/ResultScene.gd" id="1_2htbp"]
+[ext_resource type="Shader" uid="uid://btgxqpj4xlibb" path="res://script/TitleScene.gdshader" id="2_6nk7m"]
+[ext_resource type="StyleBox" uid="uid://d1pglcpdvjr8e" path="res://style/General_button_flat.tres" id="2_6y8xe"]
+[ext_resource type="StyleBox" uid="uid://ca0mvbqlyud5a" path="res://style/General_button_pressed.tres" id="3_jharg"]
+[ext_resource type="StyleBox" uid="uid://da4b861qmvtq" path="res://style/PlayerList_style_box_flat.tres" id="3_xyqww"]
+[ext_resource type="StyleBox" uid="uid://bmrug4ex2xlmw" path="res://style/General_button_hover.tres" id="4_u1cva"]
+[ext_resource type="Texture2D" uid="uid://cuc5tmv5fjiy0" path="res://image/矢印アイコン　下6.png" id="5_aqkap"]
+[ext_resource type="Texture2D" uid="uid://gbe7mvdushy1" path="res://image/矢印アイコン　上6.png" id="6_6nk7m"]
+[ext_resource type="Texture2D" uid="uid://dk6p0x3jkxtb1" path="res://image/リツイートアイコン.png" id="6_ld3fa"]
+[ext_resource type="LabelSettings" uid="uid://ceeecwte8k1qn" path="res://style/Button_label_settings.tres" id="7_jharg"]
+[ext_resource type="Texture2D" uid="uid://d0pv4e5r0yesn" path="res://image/ホームアイコン.png" id="7_ueiu8"]
+[ext_resource type="Texture2D" uid="uid://dpuqrsiw108yr" path="res://image/びっくりマーク.png" id="7_xyqww"]
+[ext_resource type="Texture2D" uid="uid://ddn5pjsbyptng" path="res://image/弓矢アイコン.png" id="8_cqs64"]
+[ext_resource type="Texture2D" uid="uid://bn4xhcv84iup3" path="res://image/ゲームアイコン10.png" id="9_aqkap"]
+[ext_resource type="Texture2D" uid="uid://h7s8xhf867r2" path="res://image/入館カードアイコン.png" id="13_v5po5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xyqww"]
+shader = ExtResource("2_6nk7m")
+shader_parameter/bg_color = Color(1, 1, 1, 1)
+shader_parameter/shape_color = Color(0, 0.8, 1, 1)
+shader_parameter/size = 10.0000004275
+shader_parameter/move_speed = 0.10000024225000016
+shader_parameter/global_rotation_speed = 0.10000024225000016
+shader_parameter/local_rotation_speed = -0.9999998100000004
+shader_parameter/shape_size = 0.10000000149012
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6nk7m"]
+bg_color = Color(0.89411765, 0.57254905, 0.7019608, 1)
+skew = Vector2(0.04, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_xyqww"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vs68l"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+outline_size = 1
+outline_color = Color(0.53333336, 1, 1, 1)
+
+[node name="ResultScene" type="Control" unique_id=1591488761]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2htbp")
+
+[node name="Background" type="ColorRect" parent="." unique_id=658689067]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_xyqww")
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 1280.0
+color = Color(1, 1, 1, 0.8)
+
+[node name="Label_ThemeTitle" type="Label" parent="." unique_id=1861297569]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 28.0
+offset_right = 566.0
+offset_bottom = 103.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_6nk7m")
+text = "結果発表"
+label_settings = SubResource("LabelSettings_xyqww")
+horizontal_alignment = 1
+
+[node name="Label_Status" type="Label" parent="." unique_id=980774080]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(720, 0)
+layout_mode = 0
+offset_top = 113.0
+offset_right = 720.0
+offset_bottom = 168.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "結果発表"
+label_settings = SubResource("LabelSettings_vs68l")
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1638048031]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 0
+offset_left = 165.0
+offset_top = 174.0
+offset_right = 365.0
+offset_bottom = 474.0
+pivot_offset_ratio = Vector2(0.5, 0)
+theme_override_styles/panel = ExtResource("3_xyqww")
+
+[node name="VBox_ResultList" type="VBoxContainer" parent="ScrollContainer" unique_id=1201130131]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(200, 300)
+layout_direction = 4
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Grid_Modes" type="GridContainer" parent="." unique_id=1757132359]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+offset_left = 14.0
+offset_top = 688.0
+offset_right = 704.0
+offset_bottom = 980.0
+columns = 2
+
+[node name="Button_TopDown" type="Button" parent="Grid_Modes" unique_id=293987269]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_6y8xe")
+theme_override_styles/pressed = ExtResource("3_jharg")
+theme_override_styles/hover = ExtResource("4_u1cva")
+text = "上から下へ"
+icon = ExtResource("5_aqkap")
+
+[node name="Button_BottomUp" type="Button" parent="Grid_Modes" unique_id=497258154]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "下から上へ"
+icon = ExtResource("6_6nk7m")
+
+[node name="Button_Random" type="Button" parent="Grid_Modes" unique_id=26417020]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "ランダム"
+icon = ExtResource("7_xyqww")
+
+[node name="Button_Manual" type="Button" parent="Grid_Modes" unique_id=1674151643]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "自分で"
+icon = ExtResource("8_cqs64")
+
+[node name="Grid_Play_Buttons" type="GridContainer" parent="." unique_id=1947159634]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.171
+anchor_top = 0.46400002
+anchor_right = -0.171
+anchor_bottom = 0.46400002
+offset_left = 226.12
+offset_top = 98.079956
+offset_right = 771.12
+offset_bottom = 679.07996
+
+[node name="Button_Restart_NewTheme" type="Button" parent="Grid_Play_Buttons" unique_id=1913990104]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_6y8xe")
+theme_override_styles/pressed = ExtResource("3_jharg")
+theme_override_styles/hover = ExtResource("4_u1cva")
+text = "新しいテーマで再挑戦"
+icon = ExtResource("9_aqkap")
+
+[node name="Button_Restart_SameTheme" type="Button" parent="Grid_Play_Buttons" unique_id=739683840]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_6y8xe")
+theme_override_styles/pressed = ExtResource("3_jharg")
+theme_override_styles/hover = ExtResource("4_u1cva")
+text = "同じテーマで再挑戦"
+icon = ExtResource("6_ld3fa")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Grid_Play_Buttons" unique_id=1011256662]
+layout_mode = 2
+
+[node name="dif_icon" type="RichTextLabel" parent="Grid_Play_Buttons/HBoxContainer" unique_id=616518197]
+layout_mode = 2
+bbcode_enabled = true
+text = "[img=40x40]res://image/コントローラーの無料アイコン3.png[/img]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+autowrap_trim_flags = 0
+
+[node name="Label_Difficulty" type="Label" parent="Grid_Play_Buttons/HBoxContainer" unique_id=771424769]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = ":難しさ選択"
+label_settings = ExtResource("7_jharg")
+
+[node name="OptionButton_Difficulty" type="OptionButton" parent="Grid_Play_Buttons/HBoxContainer" unique_id=1755785316]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+
+[node name="Button_BackTitle" type="Button" parent="Grid_Play_Buttons" unique_id=1073221181]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_6y8xe")
+theme_override_styles/pressed = ExtResource("3_jharg")
+theme_override_styles/hover = ExtResource("4_u1cva")
+text = "タイトルに戻る"
+icon = ExtResource("7_ueiu8")
+
+[node name="Button_Check_All" type="Button" parent="." unique_id=23093769]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 0
+offset_left = 145.0
+offset_top = 749.0
+offset_right = 611.0
+offset_bottom = 901.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_6y8xe")
+theme_override_styles/pressed = ExtResource("3_jharg")
+theme_override_styles/hover = ExtResource("4_u1cva")
+text = "全員の結果を確認"
+icon = ExtResource("13_v5po5")
+
+[connection signal="pressed" from="Grid_Modes/Button_TopDown" to="." method="_on_button_top_down_pressed"]
+[connection signal="pressed" from="Grid_Modes/Button_BottomUp" to="." method="_on_button_bottom_up_pressed"]
+[connection signal="pressed" from="Grid_Modes/Button_Random" to="." method="_on_button_random_pressed"]
+[connection signal="pressed" from="Grid_Modes/Button_Manual" to="." method="_on_button_manual_pressed"]
+[connection signal="pressed" from="Grid_Play_Buttons/Button_Restart_NewTheme" to="." method="_on_button_restart_new_theme_pressed"]
+[connection signal="pressed" from="Grid_Play_Buttons/Button_Restart_SameTheme" to="." method="_on_button_restart_same_theme_pressed"]
+[connection signal="item_selected" from="Grid_Play_Buttons/HBoxContainer/OptionButton_Difficulty" to="." method="_on_option_button_difficulty_item_selected"]
+[connection signal="pressed" from="Grid_Play_Buttons/Button_BackTitle" to="." method="_on_button_back_title_pressed"]
+[connection signal="pressed" from="Button_Check_All" to="." method="_on_button_check_all_pressed"]

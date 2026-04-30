@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dh46d0xug3w21"]
+
+[ext_resource type="Script" uid="uid://cjncp6sioisw" path="res://script/PlayerItem.gd" id="1_c5tbd"]
+[ext_resource type="StyleBox" uid="uid://dtg42uabqmwf4" path="res://style/Player_style_box_flat.tres" id="1_foteo"]
+[ext_resource type="StyleBox" uid="uid://dr1boowso1dqe" path="res://style/good_balance_Radious_style_box_flat.tres" id="1_p34ql"]
+[ext_resource type="LabelSettings" uid="uid://ceeecwte8k1qn" path="res://style/Button_label_settings.tres" id="3_i5nha"]
+
+[node name="PlayerItem" type="PanelContainer" unique_id=264233153]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -510.0
+offset_bottom = -1148.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_foteo")
+script = ExtResource("1_c5tbd")
+
+[node name="Label_Name" type="Label" parent="." unique_id=103306850]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("1_p34ql")
+text = "player"
+label_settings = ExtResource("3_i5nha")
+horizontal_alignment = 1

@@ -1,0 +1,586 @@
+[gd_scene format=3 uid="uid://b1ax21yp5kp55"]
+
+[ext_resource type="Script" uid="uid://degl0gsh2qrkm" path="res://script/GameplayScene.gd" id="1_6dgcv"]
+[ext_resource type="Shader" uid="uid://btgxqpj4xlibb" path="res://script/TitleScene.gdshader" id="2_b8kfg"]
+[ext_resource type="StyleBox" uid="uid://d1pglcpdvjr8e" path="res://style/General_button_flat.tres" id="2_mdmrw"]
+[ext_resource type="StyleBox" uid="uid://ca0mvbqlyud5a" path="res://style/General_button_pressed.tres" id="3_x06p8"]
+[ext_resource type="StyleBox" uid="uid://bmrug4ex2xlmw" path="res://style/General_button_hover.tres" id="4_b8kfg"]
+[ext_resource type="Texture2D" uid="uid://bcvnr1ncrsxob" path="res://image/日めくりカレンダーアイコン.png" id="5_mdmrw"]
+[ext_resource type="Texture2D" uid="uid://cg20msmlb8kvh" path="res://image/共有矢印.png" id="5_x06p8"]
+[ext_resource type="Texture2D" uid="uid://boucw3u28w8ns" path="res://image/OKアイコン.png" id="6_qnq5y"]
+[ext_resource type="Texture2D" uid="uid://bteo81oaelh63" path="res://image/会話アイコン.png" id="7_4kl3c"]
+[ext_resource type="StyleBox" uid="uid://dtg42uabqmwf4" path="res://style/Player_style_box_flat.tres" id="7_qnq5y"]
+[ext_resource type="StyleBox" uid="uid://b20q2klshigup" path="res://style/new_style_box_flat.tres" id="8_4kl3c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tx37p"]
+shader = ExtResource("2_b8kfg")
+shader_parameter/bg_color = Color(1, 1, 1, 1)
+shader_parameter/shape_color = Color(0, 0.8, 1, 1)
+shader_parameter/size = 10.0000004275
+shader_parameter/move_speed = 0.10000024225000016
+shader_parameter/global_rotation_speed = 0.10000024225000016
+shader_parameter/local_rotation_speed = -0.9999998100000004
+shader_parameter/shape_size = 0.10000000149012
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x06p8"]
+bg_color = Color(0.86467505, 0.86467516, 0.864675, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmdu8"]
+bg_color = Color(0.33513322, 0.5743325, 0.7028297, 1)
+skew = Vector2(0.12, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_edfjf"]
+font_size = 50
+font_color = Color(1, 1, 0.36862746, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c3n48"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4kl3c"]
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mdmrw"]
+font_size = 80
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s3ied"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_x06p8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ThemePanel/Label_CurrentTheme:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ThemePanel/Label_CurrentTheme:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-63, 25)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ThemePanel/Label_CurrentTheme:label_settings:font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ThemePanel/Star:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ThemePanel/Star:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ThemePanel/Star:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(659, 232)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ThemePanel/Star:label_settings:font_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0.36862746, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ThemePanel/Star2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(70.99994, 21.000015)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ThemePanel/Star2:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ThemePanel/Star2:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ThemePanel/Star2:size")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(50, 69)]
+}
+
+[sub_resource type="Animation" id="Animation_b8kfg"]
+resource_name = "Theme_decide"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ThemePanel/Label_CurrentTheme:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ThemePanel/Label_CurrentTheme:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.43619385, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 25), Vector2(-1.525879e-05, 14.999999), Vector2(0, 25)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ThemePanel/Label_CurrentTheme:label_settings:font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.08621141, 0.30445904, 0.4650185, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.8901961, 0.7411765, 0.28627452, 1), Color(0.91764706, 1, 0.54509807, 1), Color(0.46171975, 0.480155, 0.2690869, 1), Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ThemePanel/Star:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.20463458, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ThemePanel/Star:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.6285396]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ThemePanel/Star:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.36519402, 0.48325244, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(494, 10), Vector2(613, 0), Vector2(655.99994, 173.99997), Vector2(659, 232)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ThemePanel/Star:label_settings:font_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.12750308),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0.36862746, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ThemePanel/Star2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.14183937, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(70.99994, 21.000015), Vector2(30, 0), Vector2(-149, 88)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ThemePanel/Star2:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.14183937, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(2, 2)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ThemePanel/Star2:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.2831855]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ThemePanel/Star2:size")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(50, 69)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tx37p"]
+_data = {
+&"RESET": SubResource("Animation_x06p8"),
+&"Theme_decide": SubResource("Animation_b8kfg")
+}
+
+[node name="GameplayScene" type="Control" unique_id=196405720]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -27.0
+offset_top = -35.0
+offset_right = -27.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6dgcv")
+
+[node name="Background" type="ColorRect" parent="." unique_id=864150110]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_tx37p")
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 1280.0
+color = Color(1, 1, 1, 0.8)
+
+[node name="ThemePanel" type="Panel" parent="." unique_id=935648517]
+custom_minimum_size = Vector2(700, 100)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 171.0
+offset_right = 710.0
+offset_bottom = 271.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x06p8")
+
+[node name="Label_ThemeTitle" type="Label" parent="ThemePanel" unique_id=798538249]
+layout_mode = 0
+offset_left = 273.0
+offset_top = -106.0
+offset_right = 428.0
+offset_bottom = -31.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_lmdu8")
+text = "テーマ"
+label_settings = SubResource("LabelSettings_edfjf")
+horizontal_alignment = 1
+
+[node name="Label_CurrentTheme" type="Label" parent="ThemePanel" unique_id=1965879637]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(720, 0)
+layout_mode = 0
+offset_left = -63.0
+offset_top = 25.0
+offset_right = 657.0
+offset_bottom = 80.00021
+pivot_offset_ratio = Vector2(0.5, 0.1)
+theme_override_colors/font_color = Color(0.70980394, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.81960785, 0.80784315, 0, 1)
+text = "Current theme"
+label_settings = SubResource("LabelSettings_c3n48")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 0
+
+[node name="Button_NextTheme" type="Button" parent="ThemePanel" unique_id=349681537]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 121.000015
+offset_top = 202.0
+offset_right = 586.0
+offset_bottom = 354.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_mdmrw")
+theme_override_styles/pressed = ExtResource("3_x06p8")
+theme_override_styles/hover = ExtResource("4_b8kfg")
+text = "次のテーマに変更"
+icon = ExtResource("5_x06p8")
+
+[node name="Button_Decide_Theme" type="Button" parent="ThemePanel" unique_id=1981444698]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 100.0
+offset_top = 606.0
+offset_right = 605.0
+offset_bottom = 758.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_mdmrw")
+theme_override_styles/pressed = ExtResource("3_x06p8")
+theme_override_styles/hover = ExtResource("4_b8kfg")
+text = "このテーマに決定！"
+icon = ExtResource("7_4kl3c")
+
+[node name="Value_width_Panel" type="Panel" parent="ThemePanel" unique_id=1629453279]
+custom_minimum_size = Vector2(240, 80)
+layout_mode = 0
+offset_left = 51.000015
+offset_top = 113.0
+offset_right = 648.0
+offset_bottom = 193.0
+theme_override_styles/panel = ExtResource("8_4kl3c")
+
+[node name="Label_Min_Max" type="Label" parent="ThemePanel" unique_id=1971330424]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(720, 0)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 130.0
+offset_right = 706.0
+offset_bottom = 185.0
+pivot_offset_ratio = Vector2(0.5, 0)
+theme_override_colors/font_color = Color(0.70980394, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.81960785, 0.80784315, 0, 1)
+text = "Min~Max"
+label_settings = SubResource("LabelSettings_4kl3c")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 0
+
+[node name="Star" type="Label" parent="ThemePanel" unique_id=1563058917]
+layout_mode = 0
+offset_left = 659.0
+offset_top = 232.0
+offset_right = 709.00006
+offset_bottom = 301.00012
+scale = Vector2(1e-05, 1e-05)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "★"
+label_settings = SubResource("LabelSettings_edfjf")
+horizontal_alignment = 1
+
+[node name="Star2" type="Label" parent="ThemePanel" unique_id=38329099]
+layout_mode = 0
+offset_left = 70.99994
+offset_top = 21.000015
+offset_right = 120.99994
+offset_bottom = 90.000015
+scale = Vector2(1e-05, 1e-05)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "★"
+label_settings = SubResource("LabelSettings_edfjf")
+horizontal_alignment = 1
+
+[node name="PlayerConfirmPanel" type="Panel" parent="." unique_id=1242907620]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(480, 60)
+layout_mode = 0
+offset_left = 120.0
+offset_top = 458.0
+offset_right = 600.0
+offset_bottom = 518.0
+theme_override_styles/panel = ExtResource("7_qnq5y")
+
+[node name="Info_Panel" type="Panel" parent="PlayerConfirmPanel" unique_id=1869471034]
+custom_minimum_size = Vector2(240, 200)
+layout_mode = 0
+offset_left = 120.0
+offset_top = 313.0
+offset_right = 360.0
+offset_bottom = 513.0
+theme_override_styles/panel = ExtResource("8_4kl3c")
+
+[node name="Value_Panel" type="Panel" parent="PlayerConfirmPanel" unique_id=1055575389]
+custom_minimum_size = Vector2(240, 200)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 67.0
+offset_right = 482.0
+offset_bottom = 307.0
+theme_override_styles/panel = ExtResource("8_4kl3c")
+
+[node name="Label_MyNumber" type="Label" parent="PlayerConfirmPanel" unique_id=2053512180]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 155.0
+offset_top = 348.0
+offset_right = 315.0
+offset_bottom = 458.0
+text = "数字"
+label_settings = SubResource("LabelSettings_mdmrw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Instruction" type="Label" parent="PlayerConfirmPanel" unique_id=888140640]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 2.0
+offset_right = 470.0
+offset_bottom = 55.0
+text = "説明"
+label_settings = SubResource("LabelSettings_s3ied")
+horizontal_alignment = 1
+
+[node name="Button_Reveal" type="Button" parent="PlayerConfirmPanel" unique_id=1478517427]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 0
+offset_left = 73.0
+offset_top = 574.0
+offset_right = 419.0
+offset_bottom = 726.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_mdmrw")
+theme_override_styles/pressed = ExtResource("3_x06p8")
+theme_override_styles/hover = ExtResource("4_b8kfg")
+text = "数字を確認"
+icon = ExtResource("5_mdmrw")
+
+[node name="Button_NextPlayer" type="Button" parent="PlayerConfirmPanel" unique_id=81475232]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 0
+offset_left = 97.0
+offset_top = 574.0
+offset_right = 403.0
+offset_bottom = 726.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_mdmrw")
+theme_override_styles/pressed = ExtResource("3_x06p8")
+theme_override_styles/hover = ExtResource("4_b8kfg")
+text = "確認完了"
+icon = ExtResource("6_qnq5y")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2350475]
+libraries/ = SubResource("AnimationLibrary_tx37p")
+
+[connection signal="pressed" from="ThemePanel/Button_NextTheme" to="." method="_on_button_next_theme_pressed"]
+[connection signal="pressed" from="ThemePanel/Button_Decide_Theme" to="." method="_on_button_decide_theme_pressed"]
+[connection signal="pressed" from="PlayerConfirmPanel/Button_Reveal" to="." method="_on_button_reveal_pressed"]
+[connection signal="pressed" from="PlayerConfirmPanel/Button_NextPlayer" to="." method="_on_button_next_player_pressed"]

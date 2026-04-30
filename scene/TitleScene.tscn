@@ -1,0 +1,626 @@
+[gd_scene format=3 uid="uid://djudacsqmteog"]
+
+[ext_resource type="Script" uid="uid://dhj08t41u2rij" path="res://script/TitleScene.gd" id="1_rd23r"]
+[ext_resource type="Shader" uid="uid://btgxqpj4xlibb" path="res://script/TitleScene.gdshader" id="2_36gjr"]
+[ext_resource type="StyleBox" uid="uid://d1pglcpdvjr8e" path="res://style/General_button_flat.tres" id="2_cuujs"]
+[ext_resource type="Texture2D" uid="uid://c3g8lyu5y3giu" path="res://image/トランプアイコン14.png" id="2_g2ors"]
+[ext_resource type="StyleBox" uid="uid://ca0mvbqlyud5a" path="res://style/General_button_pressed.tres" id="3_gulwl"]
+[ext_resource type="StyleBox" uid="uid://bmrug4ex2xlmw" path="res://style/General_button_hover.tres" id="4_fx7r4"]
+[ext_resource type="LabelSettings" uid="uid://ceeecwte8k1qn" path="res://style/Button_label_settings.tres" id="5_78efx"]
+[ext_resource type="Texture2D" uid="uid://bvk8kvb37viam" path="res://image/矢印アイコン　上5.png" id="6_7ricb"]
+[ext_resource type="Texture2D" uid="uid://cxj4qg8x68uvc" path="res://image/埼玉飛行機.png" id="6_gh6ul"]
+[ext_resource type="Texture2D" uid="uid://bmf4esqd3hg3m" path="res://image/EXITアイコン2.png" id="7_7ricb"]
+[ext_resource type="Texture2D" uid="uid://cwn23h8ukhkpt" path="res://image/矢印アイコン　下5.png" id="7_g2ors"]
+[ext_resource type="Texture2D" uid="uid://bn4xhcv84iup3" path="res://image/ゲームアイコン10.png" id="7_h1ryh"]
+[ext_resource type="StyleBox" uid="uid://b20q2klshigup" path="res://style/new_style_box_flat.tres" id="13_s7qj6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s7qj6"]
+shader = ExtResource("2_36gjr")
+shader_parameter/bg_color = Color(1, 1, 1, 1)
+shader_parameter/shape_color = Color(0, 0.8, 1, 1)
+shader_parameter/size = 10.0000004275
+shader_parameter/move_speed = 0.10000024225000016
+shader_parameter/global_rotation_speed = 0.10000024225000016
+shader_parameter/local_rotation_speed = -0.9999998100000004
+shader_parameter/shape_size = 0.10000000149012
+
+[sub_resource type="LabelSettings" id="LabelSettings_rd23r"]
+line_spacing = 5.0
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_cuujs"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fx7r4"]
+font_size = 45
+font_color = Color(1, 0.5411765, 0.44705883, 1)
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_36gjr"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s7qj6"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wv3x1"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_fx7r4"]
+thickness = 60
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_78efx"]
+color = Color(0.6901961, 0.69803923, 0.9882353, 1)
+thickness = 60
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_q3s45"]
+color = Color(0.8666667, 1, 1, 1)
+thickness = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3s45"]
+bg_color = Color(1, 0.92941177, 0.88235295, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 17
+border_color = Color(0.09673909, 0.18688795, 0.34163848, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ricb"]
+content_margin_top = 15.0
+bg_color = Color(0.9764706, 0.63529414, 0.63529414, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1ryh"]
+content_margin_bottom = 5.0
+bg_color = Color(1, 0.85490197, 0.85490197, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 12
+border_color = Color(0.055263735, 0.12120854, 0.23442629, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+expand_margin_top = 2.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="Animation" id="Animation_gh6ul"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FishImage:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(718, 253)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FishImage:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSettingsPanel:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CardImage:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.6161749]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CardImage:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-27, 639.99994)]
+}
+
+[sub_resource type="Animation" id="Animation_p4sdm"]
+resource_name = "animation_01"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FishImage:layout_direction")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FishImage:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(19.633333, 27.133333, 29.599998),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(630, 256), Vector2(-161.70947, 268.2984), Vector2(-334.00003, 135.00003)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FishImage:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(19.633333, 22.233334, 24.333332, 27.017467, 29.599998),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 3.1415927, 6.283185307179586, 6.806784]
+}
+
+[sub_resource type="Animation" id="Animation_36gjr"]
+resource_name = "do_you_play"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CardImage:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.13413793, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.6161749, -0.71733034, -0.8953539, -1.0471976]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CardImage:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.060037542, 0.10486115, 0.13333334, 0.13413793, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(96.99996, 700), Vector2(70.999985, 648), Vector2(9, 628), Vector2(-27, 639.99994), Vector2(-36.000015, 648), Vector2(-37.000015, 662.00006)]
+}
+
+[sub_resource type="Animation" id="Animation_7ricb"]
+resource_name = "setting_hide"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSettingsPanel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(400, 500), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q3s45"]
+resource_name = "setting_show"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSettingsPanel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(550, 500)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q3s45"]
+_data = {
+&"RESET": SubResource("Animation_gh6ul"),
+&"animation_01": SubResource("Animation_p4sdm"),
+&"do_you_play": SubResource("Animation_36gjr"),
+&"setting_hide": SubResource("Animation_7ricb"),
+&"setting_show": SubResource("Animation_q3s45")
+}
+
+[node name="TitleScene" type="Control" unique_id=888620967]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rd23r")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2026055465]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_s7qj6")
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 1280.0
+color = Color(1, 1, 1, 0.8)
+
+[node name="CardImage" type="TextureRect" parent="." unique_id=1468047575]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -27.0
+offset_top = 639.99994
+offset_right = 545.00305
+offset_bottom = 1146.0001
+rotation = 1.6161749
+scale = Vector2(0.2, 0.2)
+pivot_offset_ratio = Vector2(0.3, 0.2)
+texture = ExtResource("2_g2ors")
+
+[node name="MainLayout" type="VBoxContainer" parent="." unique_id=1087853795]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 0
+offset_left = 171.0
+offset_top = 232.0
+offset_right = 553.0
+offset_bottom = 1059.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Label_Title" type="Label" parent="MainLayout" unique_id=242588180]
+layout_mode = 2
+text = "ITO kushima"
+label_settings = SubResource("LabelSettings_rd23r")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainLayout" unique_id=275903476]
+layout_mode = 2
+
+[node name="face_icon" type="RichTextLabel" parent="MainLayout/HBoxContainer" unique_id=1770337541]
+layout_mode = 2
+bbcode_enabled = true
+text = "[img=40x40]res://image/横顔アイコン.png[/img]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+autowrap_trim_flags = 0
+vertical_alignment = 1
+
+[node name="Label_Player" type="Label" parent="MainLayout/HBoxContainer" unique_id=2139075581]
+layout_mode = 2
+text = "プレイヤー人数:"
+label_settings = SubResource("LabelSettings_cuujs")
+horizontal_alignment = 1
+
+[node name="Label_CountDisplay" type="Label" parent="MainLayout/HBoxContainer" unique_id=2093506606]
+unique_name_in_owner = true
+layout_mode = 2
+text = "5"
+label_settings = SubResource("LabelSettings_fx7r4")
+
+[node name="SettingGrid" type="GridContainer" parent="MainLayout" unique_id=507728435]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/v_separation = 10
+
+[node name="Button_EditPlayers" type="Button" parent="MainLayout/SettingGrid" unique_id=528963455]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_cuujs")
+theme_override_styles/pressed = ExtResource("3_gulwl")
+theme_override_styles/hover = ExtResource("4_fx7r4")
+text = "人数を編集"
+
+[node name="GridContainer" type="GridContainer" parent="MainLayout/SettingGrid" unique_id=193272281]
+layout_mode = 2
+columns = 3
+
+[node name="dif_icon" type="RichTextLabel" parent="MainLayout/SettingGrid/GridContainer" unique_id=1568085344]
+layout_mode = 2
+bbcode_enabled = true
+text = "[img=40x40]res://image/コントローラーの無料アイコン3.png[/img]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+autowrap_trim_flags = 0
+
+[node name="Label_Difficulty" type="Label" parent="MainLayout/SettingGrid/GridContainer" unique_id=226026337]
+layout_mode = 2
+text = "難しさ"
+label_settings = ExtResource("5_78efx")
+horizontal_alignment = 1
+
+[node name="OptionButton_Difficulty" type="OptionButton" parent="MainLayout/SettingGrid/GridContainer" unique_id=1549949205]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+
+[node name="time_icon" type="RichTextLabel" parent="MainLayout/SettingGrid/GridContainer" unique_id=1079775925]
+layout_mode = 2
+bbcode_enabled = true
+text = "[img=40x40]res://image/タイマーアイコン.png[/img]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+autowrap_trim_flags = 0
+tab_size = 1
+vertical_alignment = 1
+
+[node name="Label_Time" type="Label" parent="MainLayout/SettingGrid/GridContainer" unique_id=1123625161]
+layout_mode = 2
+text = "時間
+(sec)"
+label_settings = ExtResource("5_78efx")
+horizontal_alignment = 1
+
+[node name="SpinBox_Time" type="SpinBox" parent="MainLayout/SettingGrid/GridContainer" unique_id=1571354535]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/up_icon_modulate = Color(0.7071901, 0.95596236, 0.6274844, 1)
+theme_override_colors/down_icon_modulate = Color(0.89824337, 0.37288353, 0.42794678, 1)
+theme_override_colors/down_hover_icon_modulate = Color(0.90741783, 0, 0.27369756, 1)
+theme_override_constants/buttons_width = 40
+theme_override_icons/up = ExtResource("6_7ricb")
+theme_override_icons/up_hover = ExtResource("6_7ricb")
+theme_override_icons/up_pressed = ExtResource("6_7ricb")
+theme_override_icons/up_disabled = ExtResource("6_7ricb")
+theme_override_icons/down = ExtResource("7_g2ors")
+theme_override_icons/down_hover = ExtResource("7_g2ors")
+theme_override_icons/down_pressed = ExtResource("7_g2ors")
+theme_override_icons/down_disabled = ExtResource("7_g2ors")
+max_value = 300.0
+step = 10.0
+alignment = 1
+
+[node name="face_icon" type="RichTextLabel" parent="MainLayout/SettingGrid/GridContainer" unique_id=1357973722]
+layout_mode = 2
+bbcode_enabled = true
+text = "[img=40x40]res://image/音量の無料アイコン1.png[/img]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+autowrap_trim_flags = 0
+vertical_alignment = 1
+
+[node name="Label_Volume" type="Label" parent="MainLayout/SettingGrid/GridContainer" unique_id=1920188887]
+unique_name_in_owner = true
+layout_mode = 2
+text = "音量 
+0"
+label_settings = ExtResource("5_78efx")
+horizontal_alignment = 1
+
+[node name="HSlider_Volume" type="HSlider" parent="MainLayout/SettingGrid/GridContainer" unique_id=684633169]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/center_grabber = 1
+theme_override_icons/grabber = SubResource("CompressedTexture2D_36gjr")
+theme_override_icons/grabber_highlight = SubResource("CompressedTexture2D_s7qj6")
+theme_override_icons/grabber_disabled = SubResource("CompressedTexture2D_wv3x1")
+theme_override_styles/slider = SubResource("StyleBoxLine_fx7r4")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_78efx")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_q3s45")
+step = 10.0
+
+[node name="Button_Play" type="Button" parent="MainLayout" unique_id=917641687]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.25272903, 0.19441602, 1)
+theme_override_colors/font_pressed_color = Color(0.35686275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.6862745, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_q3s45")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7ricb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h1ryh")
+text = "ゲームプレイ"
+icon = ExtResource("7_h1ryh")
+
+[node name="Button_Exit" type="Button" parent="MainLayout" unique_id=485413824]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_cuujs")
+theme_override_styles/pressed = ExtResource("3_gulwl")
+theme_override_styles/hover = ExtResource("4_fx7r4")
+text = "ゲーム終了"
+icon = ExtResource("7_7ricb")
+
+[node name="FishImage" type="TextureRect" parent="." unique_id=2032869770]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 253.0
+offset_right = 1290.003
+offset_bottom = 759.0027
+scale = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(0.3, 0.2)
+texture = ExtResource("6_gh6ul")
+
+[node name="RecordPanel" type="PanelContainer" parent="." unique_id=1396556847]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 39.0
+offset_right = 119.0
+offset_bottom = 62.0
+
+[node name="Label_Record" type="Label" parent="RecordPanel" unique_id=1404546821]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PlayerSettingsPanel" type="Panel" parent="." unique_id=270602103]
+visible = false
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 0
+offset_left = 82.0
+offset_top = 217.0
+offset_right = 122.0
+offset_bottom = 267.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/panel = ExtResource("13_s7qj6")
+
+[node name="VBox_Settings" type="VBoxContainer" parent="PlayerSettingsPanel" unique_id=488682493]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 7.0
+offset_top = -4.0
+offset_right = 547.0
+offset_bottom = 588.0
+pivot_offset_ratio = Vector2(0.5, 0)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerSettingsPanel/VBox_Settings" unique_id=828658846]
+layout_mode = 2
+
+[node name="dif_icon" type="RichTextLabel" parent="PlayerSettingsPanel/VBox_Settings/HBoxContainer" unique_id=1888464971]
+layout_mode = 2
+bbcode_enabled = true
+text = "[img=32x32]res://image/鉛筆アイコン　2.png[/img]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+autowrap_trim_flags = 0
+vertical_alignment = 1
+
+[node name="Label_Text" type="Label" parent="PlayerSettingsPanel/VBox_Settings/HBoxContainer" unique_id=2013712657]
+layout_mode = 2
+text = "人数"
+label_settings = ExtResource("5_78efx")
+
+[node name="Label_Count" type="Label" parent="PlayerSettingsPanel/VBox_Settings/HBoxContainer" unique_id=1501293556]
+unique_name_in_owner = true
+layout_mode = 2
+text = "人数"
+label_settings = ExtResource("5_78efx")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PlayerSettingsPanel/VBox_Settings" unique_id=1203056865]
+custom_minimum_size = Vector2(400, 450)
+layout_mode = 2
+
+[node name="VBox_NameList" type="VBoxContainer" parent="PlayerSettingsPanel/VBox_Settings/ScrollContainer" unique_id=1876001258]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(550, 450)
+layout_mode = 2
+
+[node name="HBox_Counter" type="HBoxContainer" parent="PlayerSettingsPanel/VBox_Settings" unique_id=922961267]
+layout_mode = 2
+
+[node name="Button_Minus" type="Button" parent="PlayerSettingsPanel/VBox_Settings/HBox_Counter" unique_id=2121613874]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_cuujs")
+theme_override_styles/pressed = ExtResource("3_gulwl")
+theme_override_styles/hover = ExtResource("4_fx7r4")
+text = "-"
+
+[node name="Button_Apply" type="Button" parent="PlayerSettingsPanel/VBox_Settings/HBox_Counter" unique_id=956943645]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_cuujs")
+theme_override_styles/pressed = ExtResource("3_gulwl")
+theme_override_styles/hover = ExtResource("4_fx7r4")
+text = "設定を反映して戻る"
+
+[node name="Button_Plus" type="Button" parent="PlayerSettingsPanel/VBox_Settings/HBox_Counter" unique_id=95138558]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_cuujs")
+theme_override_styles/pressed = ExtResource("3_gulwl")
+theme_override_styles/hover = ExtResource("4_fx7r4")
+text = "+"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=823233409]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=117129772]
+libraries/ = SubResource("AnimationLibrary_q3s45")
+autoplay = &"animation_01"
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=60250990]
+visible = false
+layout_mode = 0
+offset_right = 68.5
+offset_bottom = 31.0
+
+[connection signal="pressed" from="MainLayout/SettingGrid/Button_EditPlayers" to="." method="_on_button_edit_players_pressed"]
+[connection signal="item_selected" from="MainLayout/SettingGrid/GridContainer/OptionButton_Difficulty" to="." method="_on_option_button_difficulty_item_selected"]
+[connection signal="pressed" from="MainLayout/SettingGrid/GridContainer/OptionButton_Difficulty" to="." method="_on_option_button_difficulty_pressed"]
+[connection signal="value_changed" from="MainLayout/SettingGrid/GridContainer/SpinBox_Time" to="." method="_on_spin_box_time_value_changed"]
+[connection signal="value_changed" from="MainLayout/SettingGrid/GridContainer/HSlider_Volume" to="." method="_on_h_slider_volume_value_changed"]
+[connection signal="button_down" from="MainLayout/Button_Play" to="." method="_on_button_play_button_down"]
+[connection signal="button_up" from="MainLayout/Button_Play" to="." method="_on_button_play_button_up"]
+[connection signal="pressed" from="MainLayout/Button_Play" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="MainLayout/Button_Exit" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="PlayerSettingsPanel/VBox_Settings/HBox_Counter/Button_Minus" to="." method="_on_button_minus_pressed"]
+[connection signal="pressed" from="PlayerSettingsPanel/VBox_Settings/HBox_Counter/Button_Apply" to="." method="_on_button_apply_pressed"]
+[connection signal="pressed" from="PlayerSettingsPanel/VBox_Settings/HBox_Counter/Button_Plus" to="." method="_on_button_plus_pressed"]

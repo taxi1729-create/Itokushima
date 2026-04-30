@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://tp4uy512qo3w"]
+
+[ext_resource type="Script" uid="uid://b5u18i6fqk2lk" path="res://script/TweenManager.gd" id="1_m7ndp"]
+
+[node name="TweenManager" type="CanvasLayer" unique_id=1855344427]
+script = ExtResource("1_m7ndp")
+
+[node name="TransitionRect" type="ColorRect" parent="." unique_id=2141524803]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
