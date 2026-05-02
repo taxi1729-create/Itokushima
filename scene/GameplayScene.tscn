@@ -393,7 +393,7 @@ layout_mode = 0
 offset_left = -63.0
 offset_top = 25.0
 offset_right = 657.0
-offset_bottom = 80.00021
+offset_bottom = 84.0
 pivot_offset_ratio = Vector2(0.5, 0.1)
 theme_override_colors/font_color = Color(0.70980394, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.81960785, 0.80784315, 0, 1)
@@ -470,7 +470,7 @@ layout_mode = 0
 offset_left = 659.0
 offset_top = 232.0
 offset_right = 709.00006
-offset_bottom = 301.00012
+offset_bottom = 305.0
 scale = Vector2(1e-05, 1e-05)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 text = "★"
@@ -482,7 +482,7 @@ layout_mode = 0
 offset_left = 70.99994
 offset_top = 21.000015
 offset_right = 120.99994
-offset_bottom = 90.000015
+offset_bottom = 94.000015
 scale = Vector2(1e-05, 1e-05)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 text = "★"
@@ -579,6 +579,9 @@ icon = ExtResource("6_qnq5y")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2350475]
 libraries/ = SubResource("AnimationLibrary_tx37p")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1274019118]
+anchor_mode = 0
 
 [connection signal="pressed" from="ThemePanel/Button_NextTheme" to="." method="_on_button_next_theme_pressed"]
 [connection signal="pressed" from="ThemePanel/Button_Decide_Theme" to="." method="_on_button_decide_theme_pressed"]

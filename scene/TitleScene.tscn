@@ -500,10 +500,10 @@ texture = ExtResource("6_gh6ul")
 
 [node name="RecordPanel" type="PanelContainer" parent="." unique_id=1396556847]
 layout_mode = 0
-offset_left = 33.0
-offset_top = 39.0
-offset_right = 119.0
-offset_bottom = 62.0
+offset_left = 53.0
+offset_top = 1133.0
+offset_right = 139.0
+offset_bottom = 1157.0
 
 [node name="Label_Record" type="Label" parent="RecordPanel" unique_id=1404546821]
 unique_name_in_owner = true
@@ -633,6 +633,9 @@ offset_bottom = 202.0
 text = "ITO kushima"
 label_settings = SubResource("LabelSettings_3vcqj")
 horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1811807340]
+anchor_mode = 0
 
 [connection signal="pressed" from="MainLayout/SettingGrid/Button_EditPlayers" to="." method="_on_button_edit_players_pressed"]
 [connection signal="item_selected" from="MainLayout/SettingGrid/GridContainer/OptionButton_Difficulty" to="." method="_on_option_button_difficulty_item_selected"]

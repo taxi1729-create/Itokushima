@@ -334,6 +334,9 @@ theme_override_styles/hover = ExtResource("4_u1cva")
 text = "全員の結果を確認"
 icon = ExtResource("13_v5po5")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1625264676]
+anchor_mode = 0
+
 [connection signal="pressed" from="Grid_Modes/Button_TopDown" to="." method="_on_button_top_down_pressed"]
 [connection signal="pressed" from="Grid_Modes/Button_BottomUp" to="." method="_on_button_bottom_up_pressed"]
 [connection signal="pressed" from="Grid_Modes/Button_Random" to="." method="_on_button_random_pressed"]
