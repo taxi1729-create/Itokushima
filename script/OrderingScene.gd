@@ -29,6 +29,8 @@ func _ready():
 	scene_c =0
 	# タイマーの初期設定と開始
 	game_timer.wait_time = GameManager.thinking_time
+	%Min_text.text = GameManager.current_min_text
+	%Max_text.text = GameManager.current_max_text
 	game_timer.start()
 
 func _process(_delta):

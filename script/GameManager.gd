@@ -8,6 +8,9 @@ var thinking_time: int = 90 # 秒
 var current_theme: String = ""
 var restart_same_theme =0
 
+var current_min_text=""
+var current_max_text=""
+
 # プレイヤーごとの割り当て数字を保持 {"プレイヤー名": 85, ...}
 var player_numbers: Dictionary = {} 
 var final_ordered_names: Array = [] # これを追加
@@ -54,15 +57,7 @@ func get_random_player_name() -> String:
 	return "誰か"
 
 # お題リストの更新例
-# {player} という文字列を入れておくのがポイントです
-func update_themes_with_player():
-	themes = [
-		{"text": "楽しいこと", "weight": 10},
-		{"text": "美味しいもの", "weight": 10},
-		{"text": "右隣の人がやりそうな事", "weight": 5},
-		{"text": "{player}が演じていそうなキャラ", "weight": 5}, # 追加
-		{"text": "{player}が好きそうなもの", "weight": 5}      # 追加
-	]
+
 # 重み付け抽選でお題を決定
 func roll_theme() -> String:
 	var total_weight = 0
@@ -78,6 +73,8 @@ func roll_theme() -> String:
 			if  chance < t["weight"]:
 				print("当選:", t)
 				current_theme =t["text"]
+				current_min_text =t["min_text"]
+				current_max_text =t["max_text"]
 				return t["text"] # ここで関数を抜ける（無限ループ終了）
 	return themes[0]["text"]
 # 数字を配り直す関数

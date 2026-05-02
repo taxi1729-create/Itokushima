@@ -10,6 +10,7 @@
 [ext_resource type="StyleBox" uid="uid://ca0mvbqlyud5a" path="res://style/General_button_pressed.tres" id="5_oj5px"]
 [ext_resource type="StyleBox" uid="uid://bmrug4ex2xlmw" path="res://style/General_button_hover.tres" id="6_yiede"]
 [ext_resource type="Texture2D" uid="uid://cvbh55alae3sl" path="res://image/ダーツの矢のアイコン素材.png" id="7_kv6lg"]
+[ext_resource type="LabelSettings" uid="uid://ceeecwte8k1qn" path="res://style/Button_label_settings.tres" id="11_ofk1a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yiede"]
 shader = ExtResource("2_oj5px")
@@ -36,6 +37,18 @@ outline_color = Color(0, 0, 0, 1)
 font_size = 30
 shadow_size = 3
 shadow_color = Color(0, 0, 0, 0.4745098)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nphdl"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+outline_size = 1
+outline_color = Color(0, 0, 0, 0.6862745)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yckk6"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+outline_size = 1
+outline_color = Color(0, 0, 0, 0.6862745)
 
 [sub_resource type="FontFile" id="FontFile_wknvd"]
 cache/0/variation_coordinates = {}
@@ -191,13 +204,16 @@ layout_mode = 2
 text = "残り時間"
 label_settings = SubResource("LabelSettings_ebs4p")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBox_Main" unique_id=1661233888]
-custom_minimum_size = Vector2(500, 200)
+[node name="HBoxContainer" type="HBoxContainer" parent="VBox_Main" unique_id=1552701425]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox_Main/HBoxContainer" unique_id=1661233888]
+custom_minimum_size = Vector2(350, 200)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("4_e0exp")
 
-[node name="VBox_PlayerList" type="VBoxContainer" parent="VBox_Main/ScrollContainer" unique_id=1037865477]
+[node name="VBox_PlayerList" type="VBoxContainer" parent="VBox_Main/HBoxContainer/ScrollContainer" unique_id=1037865477]
 unique_name_in_owner = true
 clip_contents = true
 custom_minimum_size = Vector2(200, 40)
@@ -205,6 +221,47 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
+
+[node name="Vbox_Theme" type="VBoxContainer" parent="VBox_Main/HBoxContainer" unique_id=298437228]
+custom_minimum_size = Vector2(120, 400)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox_Main/HBoxContainer/Vbox_Theme" unique_id=1088843368]
+layout_mode = 2
+text = "100:"
+label_settings = ExtResource("11_ofk1a")
+horizontal_alignment = 1
+
+[node name="Value_Panel" type="Panel" parent="VBox_Main/HBoxContainer/Vbox_Theme/Label" unique_id=1207418382]
+z_index = -1
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 400.0
+theme_override_styles/panel = ExtResource("3_yiede")
+
+[node name="Max_text" type="Label" parent="VBox_Main/HBoxContainer/Vbox_Theme" unique_id=1139431365]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100:"
+label_settings = SubResource("LabelSettings_nphdl")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="VBox_Main/HBoxContainer/Vbox_Theme" unique_id=1110434258]
+layout_mode = 2
+text = "
+
+0:"
+label_settings = ExtResource("11_ofk1a")
+horizontal_alignment = 1
+
+[node name="Min_text" type="Label" parent="VBox_Main/HBoxContainer/Vbox_Theme" unique_id=959953476]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100:"
+label_settings = SubResource("LabelSettings_yckk6")
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="HBox_Footer" type="VBoxContainer" parent="VBox_Main" unique_id=1764566480]
 layout_mode = 2

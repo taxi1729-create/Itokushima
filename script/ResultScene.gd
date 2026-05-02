@@ -21,7 +21,9 @@ func _ready():
 	
 	_calculate_ideal_order()
 	_setup_list()
-	
+
+	%Min_text.text = GameManager.current_min_text
+	%Max_text.text = GameManager.current_max_text
 	# 難易度選択肢の初期化
 	difficulty_input.clear()
 	difficulty_input.add_item("簡単")
@@ -106,6 +108,8 @@ func _lock_mode_buttons():
 			if btn is Button: btn.disabled = true
 
 func _on_button_manual_pressed() -> void:
+	TweenManager.pop_up(%Button_Manual)
+	await get_tree().create_timer(0.3).timeout
 	if is_revealing: return
 	_lock_mode_buttons()
 	is_manual_mode = true
@@ -124,6 +128,8 @@ func _on_item_clicked(event, item):
 # --- 発表演出 ---
 
 func _on_button_top_down_pressed():
+	TweenManager.pop_up(%Button_TopDown)
+	await get_tree().create_timer(0.3).timeout
 	if is_revealing: return
 	is_revealing = true
 	_lock_mode_buttons()
@@ -134,6 +140,8 @@ func _on_button_top_down_pressed():
 	is_revealing = false
 
 func _on_button_bottom_up_pressed():
+	TweenManager.pop_up(%Button_BottomUp)
+	await get_tree().create_timer(0.3).timeout
 	if is_revealing: return
 	is_revealing = true
 	_lock_mode_buttons()
@@ -146,6 +154,8 @@ func _on_button_bottom_up_pressed():
 	is_revealing = false
 
 func _on_button_random_pressed():
+	TweenManager.pop_up(%Button_Random)
+	await get_tree().create_timer(0.3).timeout
 	if is_revealing: return
 	is_revealing = true
 	_lock_mode_buttons()
@@ -163,6 +173,8 @@ func _on_button_random_pressed():
 # --- その他共通処理 ---
 
 func _on_option_button_difficulty_item_selected(index):
+	TweenManager.pop_up(%OptionButton_Difficulty)
+	await get_tree().create_timer(0.3).timeout
 	GameManager.current_difficulty = index
 
 func _calculate_ideal_order():
@@ -192,6 +204,8 @@ func _show_final_options():
 	if restart_container: restart_container.show()
 
 func _on_button_check_all_pressed():
+	TweenManager.pop_up(%Button_Check_All)
+	await get_tree().create_timer(0.3).timeout
 	for item in list_container.get_children():
 		if not item.is_revealed:
 			var idx = item.get_index()
@@ -203,17 +217,24 @@ func _on_button_check_all_pressed():
 # --- 遷移/リスタート ---
 
 func _on_button_restart_new_theme_pressed():
+	
+	TweenManager.pop_up(%Button_Restart_NewTheme)
+	await get_tree().create_timer(0.3).timeout
 	GameManager.current_theme = GameManager.roll_theme()
 	GameManager.generate_numbers()
 	_change_to_gameplay()
 
 func _on_button_restart_same_theme_pressed():
+	TweenManager.pop_up(%Button_Restart_SameTheme)
+	await get_tree().create_timer(0.3).timeout
 	GameManager.generate_numbers()
 	GameManager.restart_same_theme =1
 	_change_to_gameplay()
 
 func _on_button_back_title_pressed():
-	get_tree().change_scene_to_file("res://scene/TitleScene.tscn")
+	TweenManager.pop_up(%Button_BackTitle)
+	await get_tree().create_timer(0.3).timeout
+	TweenManager.change_scene("res://scene/TitleScene.tscn")
 
 func _change_to_gameplay():
-	get_tree().change_scene_to_file("res://scene/GameplayScene.tscn")
+	TweenManager.change_scene("res://scene/GameplayScene.tscn")

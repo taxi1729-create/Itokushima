@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cwn23h8ukhkpt" path="res://image/矢印アイコン　下5.png" id="7_g2ors"]
 [ext_resource type="Texture2D" uid="uid://bn4xhcv84iup3" path="res://image/ゲームアイコン10.png" id="7_h1ryh"]
 [ext_resource type="StyleBox" uid="uid://b20q2klshigup" path="res://style/new_style_box_flat.tres" id="13_s7qj6"]
+[ext_resource type="Texture2D" uid="uid://dxypvsmiq3o1j" path="res://index.icon.png" id="14_wv3x1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s7qj6"]
 shader = ExtResource("2_36gjr")
@@ -27,6 +28,7 @@ shader_parameter/shape_size = 0.10000000149012
 [sub_resource type="LabelSettings" id="LabelSettings_rd23r"]
 line_spacing = 5.0
 font_size = 32
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cuujs"]
 font_size = 40
@@ -273,6 +275,11 @@ _data = {
 &"setting_show": SubResource("Animation_q3s45")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_3vcqj"]
+line_spacing = 5.0
+font_size = 80
+font_color = Color(0, 0, 0, 1)
+
 [node name="TitleScene" type="Control" unique_id=888620967]
 layout_mode = 3
 anchors_preset = 0
@@ -312,7 +319,7 @@ alignment = 1
 
 [node name="Label_Title" type="Label" parent="MainLayout" unique_id=242588180]
 layout_mode = 2
-text = "ITO kushima"
+text = "タイトル画面"
 label_settings = SubResource("LabelSettings_rd23r")
 horizontal_alignment = 1
 
@@ -606,11 +613,26 @@ text = "+"
 libraries/ = SubResource("AnimationLibrary_q3s45")
 autoplay = &"animation_01"
 
-[node name="LineEdit" type="LineEdit" parent="." unique_id=60250990]
-visible = false
+[node name="CardImage2" type="TextureRect" parent="." unique_id=166867413]
+unique_name_in_owner = true
 layout_mode = 0
-offset_right = 68.5
-offset_bottom = 31.0
+offset_left = 254.99995
+offset_top = -168.00002
+offset_right = 1354.0
+offset_bottom = 792.0
+scale = Vector2(0.2, 0.2)
+pivot_offset_ratio = Vector2(0.3, 0.2)
+texture = ExtResource("14_wv3x1")
+
+[node name="Label_Title" type="Label" parent="." unique_id=187525492]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 92.0
+offset_right = 596.0
+offset_bottom = 202.0
+text = "ITO kushima"
+label_settings = SubResource("LabelSettings_3vcqj")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="MainLayout/SettingGrid/Button_EditPlayers" to="." method="_on_button_edit_players_pressed"]
 [connection signal="item_selected" from="MainLayout/SettingGrid/GridContainer/OptionButton_Difficulty" to="." method="_on_option_button_difficulty_item_selected"]

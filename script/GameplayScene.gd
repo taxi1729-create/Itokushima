@@ -82,7 +82,7 @@ func _update_theme_display():
 		%Button_NextTheme.show()
 		$AnimationPlayer.play("Theme_decide")
 		# 結果画面などで使うためにGameManagerに現在の最終的なお題を保存
-		GameManager.current_theme = theme_label.text
+		#GameManager.current_theme = theme_label.text
 		GameManager.restart_same_theme =0
 	# もしお題に "{player}" が含まれていたら置換する
 	if "{player}" in raw_text:
@@ -91,9 +91,11 @@ func _update_theme_display():
 		theme_label.text = raw_text.replace("{player}", r_name)
 	else:
 		theme_label.text = raw_text
-		var Min = GameManager.themes[current_theme_index]["min_text"]
-		var Max = GameManager.themes[current_theme_index]["max_text"]
-		%Label_Min_Max.text = "0: %s ~ 100:%s" % [Min ,Max] 
+	var Min = GameManager.themes[current_theme_index]["min_text"]
+	var Max = GameManager.themes[current_theme_index]["max_text"]
+	%Label_Min_Max.text = "0: %s ~ 100:%s" % [Min ,Max] 
+	GameManager.current_min_text =Min
+	GameManager.current_max_text =Max
 	
 
 func _on_button_next_theme_pressed():
@@ -146,7 +148,7 @@ func _on_button_decide_theme_pressed() -> void:
 	TweenManager.pop_up(%Button_Decide_Theme)
 	await get_tree().create_timer(0.3).timeout
 	%PlayerConfirmPanel.show()
-	
+	GameManager.current_theme = GameManager.themes[current_theme_index]["text"]
 	TweenManager.pop_up(%PlayerConfirmPanel)
 	%Button_Decide_Theme.hide()
 	%Button_NextTheme.hide()

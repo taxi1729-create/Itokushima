@@ -7,6 +7,7 @@
 [ext_resource type="StyleBox" uid="uid://da4b861qmvtq" path="res://style/PlayerList_style_box_flat.tres" id="3_xyqww"]
 [ext_resource type="StyleBox" uid="uid://bmrug4ex2xlmw" path="res://style/General_button_hover.tres" id="4_u1cva"]
 [ext_resource type="Texture2D" uid="uid://cuc5tmv5fjiy0" path="res://image/矢印アイコン　下6.png" id="5_aqkap"]
+[ext_resource type="StyleBox" uid="uid://b20q2klshigup" path="res://style/new_style_box_flat.tres" id="5_cqs64"]
 [ext_resource type="Texture2D" uid="uid://gbe7mvdushy1" path="res://image/矢印アイコン　上6.png" id="6_6nk7m"]
 [ext_resource type="Texture2D" uid="uid://dk6p0x3jkxtb1" path="res://image/リツイートアイコン.png" id="6_ld3fa"]
 [ext_resource type="LabelSettings" uid="uid://ceeecwte8k1qn" path="res://style/Button_label_settings.tres" id="7_jharg"]
@@ -53,6 +54,18 @@ font_color = Color(0, 0, 0, 1)
 outline_size = 1
 outline_color = Color(0.53333336, 1, 1, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_v5po5"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+outline_size = 1
+outline_color = Color(0, 0, 0, 0.6862745)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g5at0"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+outline_size = 1
+outline_color = Color(0, 0, 0, 0.6862745)
+
 [node name="ResultScene" type="Control" unique_id=1591488761]
 layout_mode = 3
 anchors_preset = 15
@@ -64,6 +77,7 @@ script = ExtResource("1_2htbp")
 
 [node name="Background" type="ColorRect" parent="." unique_id=658689067]
 unique_name_in_owner = true
+z_index = -2
 material = SubResource("ShaderMaterial_xyqww")
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
@@ -94,17 +108,19 @@ text = "結果発表"
 label_settings = SubResource("LabelSettings_vs68l")
 horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1638048031]
-custom_minimum_size = Vector2(400, 500)
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1609074551]
 layout_mode = 0
-offset_left = 165.0
-offset_top = 174.0
-offset_right = 365.0
-offset_bottom = 474.0
-pivot_offset_ratio = Vector2(0.5, 0)
+offset_left = 167.0
+offset_top = 176.0
+offset_right = 167.0
+offset_bottom = 176.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer" unique_id=1638048031]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 2
 theme_override_styles/panel = ExtResource("3_xyqww")
 
-[node name="VBox_ResultList" type="VBoxContainer" parent="ScrollContainer" unique_id=1201130131]
+[node name="VBox_ResultList" type="VBoxContainer" parent="HBoxContainer/ScrollContainer" unique_id=1201130131]
 unique_name_in_owner = true
 clip_contents = true
 custom_minimum_size = Vector2(200, 300)
@@ -112,6 +128,48 @@ layout_direction = 4
 layout_mode = 2
 size_flags_horizontal = 4
 alignment = 1
+
+[node name="Vbox_Theme" type="VBoxContainer" parent="HBoxContainer" unique_id=1284472520]
+custom_minimum_size = Vector2(120, 400)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Vbox_Theme" unique_id=871668512]
+layout_mode = 2
+text = "100:"
+label_settings = ExtResource("7_jharg")
+horizontal_alignment = 1
+
+[node name="Value_Panel" type="Panel" parent="HBoxContainer/Vbox_Theme/Label" unique_id=1058452248]
+z_index = -1
+custom_minimum_size = Vector2(150, 500)
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 400.0
+theme_override_styles/panel = ExtResource("5_cqs64")
+
+[node name="Max_text" type="Label" parent="HBoxContainer/Vbox_Theme" unique_id=1361415671]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100:"
+label_settings = SubResource("LabelSettings_v5po5")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="HBoxContainer/Vbox_Theme" unique_id=1173323393]
+layout_mode = 2
+text = "
+
+0:"
+label_settings = ExtResource("7_jharg")
+horizontal_alignment = 1
+
+[node name="Min_text" type="Label" parent="HBoxContainer/Vbox_Theme" unique_id=1215362088]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100:"
+label_settings = SubResource("LabelSettings_g5at0")
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Grid_Modes" type="GridContainer" parent="." unique_id=1757132359]
 unique_name_in_owner = true
@@ -124,6 +182,7 @@ offset_bottom = 980.0
 columns = 2
 
 [node name="Button_TopDown" type="Button" parent="Grid_Modes" unique_id=293987269]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -137,25 +196,48 @@ text = "上から下へ"
 icon = ExtResource("5_aqkap")
 
 [node name="Button_BottomUp" type="Button" parent="Grid_Modes" unique_id=497258154]
+unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_6y8xe")
+theme_override_styles/pressed = ExtResource("3_jharg")
+theme_override_styles/hover = ExtResource("4_u1cva")
 text = "下から上へ"
 icon = ExtResource("6_6nk7m")
 
 [node name="Button_Random" type="Button" parent="Grid_Modes" unique_id=26417020]
+unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_6y8xe")
+theme_override_styles/pressed = ExtResource("3_jharg")
+theme_override_styles/hover = ExtResource("4_u1cva")
 text = "ランダム"
 icon = ExtResource("7_xyqww")
 
 [node name="Button_Manual" type="Button" parent="Grid_Modes" unique_id=1674151643]
+unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_6y8xe")
 text = "自分で"
 icon = ExtResource("8_cqs64")
 
 [node name="Grid_Play_Buttons" type="GridContainer" parent="." unique_id=1947159634]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.171
@@ -168,6 +250,7 @@ offset_right = 771.12
 offset_bottom = 679.07996
 
 [node name="Button_Restart_NewTheme" type="Button" parent="Grid_Play_Buttons" unique_id=1913990104]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -181,6 +264,7 @@ text = "新しいテーマで再挑戦"
 icon = ExtResource("9_aqkap")
 
 [node name="Button_Restart_SameTheme" type="Button" parent="Grid_Play_Buttons" unique_id=739683840]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -218,6 +302,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 
 [node name="Button_BackTitle" type="Button" parent="Grid_Play_Buttons" unique_id=1073221181]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
