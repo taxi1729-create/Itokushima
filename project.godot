@@ -27,6 +27,12 @@ TweenManager="*uid://tp4uy512qo3w"
 window/size/viewport_width=720
 window/size/viewport_height=1280
 window/size/initial_position_type=4
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[gui]
+
+theme/custom_font="uid://dfhdpqd0mu0d6"
 
 [physics]
 
