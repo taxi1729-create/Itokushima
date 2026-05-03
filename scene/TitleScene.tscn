@@ -394,6 +394,11 @@ theme_override_font_sizes/font_size = 40
 
 [node name="time_icon" type="RichTextLabel" parent="MainLayout/SettingGrid/GridContainer" unique_id=1079775925]
 layout_mode = 2
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
 bbcode_enabled = true
 text = "[img=40x40]res://image/タイマーアイコン.png[/img]"
 fit_content = true
@@ -401,6 +406,7 @@ scroll_active = false
 autowrap_mode = 0
 autowrap_trim_flags = 0
 tab_size = 1
+context_menu_enabled = true
 vertical_alignment = 1
 
 [node name="Label_Time" type="Label" parent="MainLayout/SettingGrid/GridContainer" unique_id=1123625161]
@@ -428,6 +434,7 @@ theme_override_icons/down_disabled = ExtResource("7_g2ors")
 max_value = 300.0
 step = 10.0
 alignment = 1
+update_on_text_changed = true
 
 [node name="face_icon" type="RichTextLabel" parent="MainLayout/SettingGrid/GridContainer" unique_id=1357973722]
 layout_mode = 2

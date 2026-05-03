@@ -113,7 +113,7 @@ func _on_button_manual_pressed() -> void:
 	if is_revealing: return
 	_lock_mode_buttons()
 	is_manual_mode = true
-	status_label.text = "マニュアルモード：\n正しい順位の人をタップして！"
+	status_label.text = "正しい順位の人をタップして！"
 	Input.vibrate_handheld(50)
 
 func _on_item_clicked(event, item):

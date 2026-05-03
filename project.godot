@@ -13,6 +13,7 @@ config_version=5
 config/name="ITO_kushima"
 run/main_scene="uid://djudacsqmteog"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/bg_color=Color(1, 1, 1, 1)
 config/icon="uid://chamxfre8p503"
 
 [autoload]
@@ -33,6 +34,10 @@ window/stretch/aspect="expand"
 [gui]
 
 theme/custom_font="uid://dfhdpqd0mu0d6"
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [physics]
 

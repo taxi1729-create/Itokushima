@@ -162,6 +162,9 @@ func _refresh_name_inputs():
 		line_edit.add_theme_constant_override("caret_width", 4)
 		line_edit.add_theme_stylebox_override("normal", load("/Users/kojimatakuya/ito-kushima/style/Player_style_box_flat.tres"))
 		line_edit.add_theme_stylebox_override("forcus", load("/Users/kojimatakuya/ito-kushima/style/Player_style_box_flat.tres"))
+		line_edit.set_script(load("res://script/web_line_edit.gd"))
+		#add_child(my_edit)
+		line_edit.placeholder_text = "ここをタップ"
 		name_list_container.add_child(line_edit)
 
 # 「反映して戻る」ボタン（パネル内）

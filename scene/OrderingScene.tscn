@@ -74,15 +74,15 @@ z_index = -100
 material = SubResource("ShaderMaterial_yiede")
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
-offset_right = 720.0
-offset_bottom = 1280.0
+offset_right = 760.0
+offset_bottom = 1320.0
 color = Color(1, 1, 1, 0.8)
 
 [node name="VBox_Main" type="VBoxContainer" parent="." unique_id=704109657]
 layout_mode = 0
 offset_left = 94.0
 offset_top = 58.0
-offset_right = 594.0
+offset_right = 634.0
 offset_bottom = 1107.0
 
 [node name="Label_Theme" type="Label" parent="VBox_Main" unique_id=1825048782]
@@ -93,7 +93,7 @@ label_settings = SubResource("LabelSettings_e0exp")
 
 [node name="Value_Panel" type="Panel" parent="VBox_Main/Label_Theme" unique_id=791524837]
 z_index = -1
-custom_minimum_size = Vector2(240, 200)
+custom_minimum_size = Vector2(240, 280)
 layout_mode = 0
 offset_right = 500.0
 offset_bottom = 200.0
@@ -111,6 +111,14 @@ vertical_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 text = "残り時間"
+label_settings = SubResource("LabelSettings_ebs4p")
+horizontal_alignment = 1
+
+[node name="TimerLabel2" type="Label" parent="VBox_Main" unique_id=1501409157]
+unique_name_in_owner = true
+layout_mode = 2
+text = "
+"
 label_settings = SubResource("LabelSettings_ebs4p")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBox_Main" unique_id=1552701425]
@@ -171,6 +179,11 @@ text = "100:"
 label_settings = SubResource("LabelSettings_yckk6")
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="TimerLabel3" type="Label" parent="VBox_Main" unique_id=292169868]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = SubResource("LabelSettings_ebs4p")
 
 [node name="HBox_Footer" type="VBoxContainer" parent="VBox_Main" unique_id=1764566480]
 layout_mode = 2
